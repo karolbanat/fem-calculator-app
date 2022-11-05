@@ -1,0 +1,28 @@
+@use '../abstracts/mixins' as mxn;
+
+body {
+	font-family: var(--ff-primary);
+	font-weight: var(--fw-700);
+	color: var(--body-copy);
+	background-color: var(--bg-body);
+
+	@media (prefers-color-scheme: dark) {
+		@include mxn.theme-dark;
+	}
+
+	@media (prefers-color-scheme: light) {
+		@include mxn.theme-light;
+	}
+
+	&[data-theme='dark'] {
+		@include mxn.theme-dark;
+	}
+
+	&[data-theme='light'] {
+		@include mxn.theme-light;
+	}
+
+	&[data-theme='fancy'] {
+		@include mxn.theme-fancy;
+	}
+}

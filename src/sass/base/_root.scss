@@ -2,21 +2,24 @@
 @use '../abstracts/mixins';
 
 :root {
-	// colors
-	@each $color, $shades in variables.$colors {
-		@each $shade, $value in $shades {
-			--clr-#{$color}-#{$shade}: #{$value};
+	/* 	colors */
+	@each $theme, $colors in variables.$themes {
+		@each $color, $shades in $colors {
+			@each $shade, $value in $shades {
+				--clr-#{$color}-#{$shade}-#{$theme}: #{$value};
+			}
 		}
 	}
 
-	// font families
+	/* 	font families */
+	--ff-primary: 'League Spartan', sans-serif;
 
-	// font wieghts
+	/* 	font weights */
 	@each $font-weight, $value in variables.$font-weights {
 		--fw-#{$font-weight}: #{$value};
 	}
 
-	// font sizes
+	/* 	font sizes */
 	@each $screen, $sizes in variables.$font-sizes {
 		@if $screen == small {
 			@each $size, $value in $sizes {
@@ -31,15 +34,30 @@
 		}
 	}
 
-	// border radius
-	@each $radius, $value in variables.$border-radius {
-		--borr-#{$radius}: #{$value};
+	/* 	border radius */
+	@each $screen, $radiuses in variables.$border-radius {
+		@if $screen == small {
+			@each $radius, $value in $radiuses {
+				--fz-#{$radius}: #{$value};
+			}
+		} @else {
+			@include mixins.mq($screen) {
+				@each $radius, $value in $radiuses {
+					--fz-#{$radius}: #{$value};
+				}
+			}
+		}
 	}
 
-	// spacings
-	@each $unit, $sizes in variables.$spacings {
-		@each $size, $value in $sizes {
-			--spacing-#{$unit}-#{$size}: #{$value};
-		}
+	/* 	spacings */
+	--spacer-em-200: 0.625em;
+	--spacer-em-300: 0.725em;
+	--spacer-rem-200: 1.3rem;
+	--spacer-rem-300: 2.4rem;
+	--spacer-rem-400: 2.4rem;
+	--spacer-rem-500: 3.2rem;
+	@include mixins.mq(medium) {
+		--spacer-rem-200: 2.4rem;
+		--spacer-rem-400: 3.2rem;
 	}
 }

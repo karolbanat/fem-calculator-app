@@ -7,3 +7,69 @@
 		@content;
 	}
 }
+
+@mixin theme-dark {
+	--bg-body: var(--clr-primary-500-dark);
+	--body-copy: var(--clr-neutral-100-dark);
+	--bg-theme-switcher: var(--clr-primary-600-dark);
+	--dot-theme-switcher: var(--clr-accent-400-dark);
+	--dot-theme-switcher-hover: var(--clr-accent-300-dark);
+	--bg-calculator-screen: var(--clr-primary-700-dark);
+	--bg-calculator-keypad: var(--clr-primary-600-dark);
+	--bg-button-neutral: var(--clr-neutral-300-dark);
+	--bg-button-neutral-hover: var(--clr-neutral-200-dark);
+	--text-button-neutral: var(--clr-neutral-600-dark);
+	--shadow-button-neutral: var(--clr-neutral-400-dark);
+	--bg-button-primary: var(--clr-primary-300-dark);
+	--bg-button-primary-hover: var(--clr-primary-200-dark);
+	--text-button-primary: var(--clr-neutral-100-dark);
+	--shadow-button-primary: var(--clr-primary-400-dark);
+	--bg-button-accent: var(--clr-accent-400-dark);
+	--bg-button-accent-hover: var(--clr-accent-300-dark);
+	--text-button-accent: var(--clr-neutral-100-dark);
+	--shadow-button-accent: var(--clr-accent-500-dark);
+}
+
+@mixin theme-light {
+	--bg-body: var(--clr-neutral-300-light);
+	--body-copy: var(--clr-neutral-700-light);
+	--bg-theme-switcher: var(--clr-neutral-400-light);
+	--dot-theme-switcher: var(--clr-accent-400-light);
+	--dot-theme-switcher-hover: var(--clr-accent-300-light);
+	--bg-calculator-screen: var(--clr-neutral-200-light);
+	--bg-calculator-keypad: var(--clr-neutral-400-light);
+	--bg-button-neutral: var(--clr-neutral-500-light);
+	--bg-button-neutral-hover: var(--clr-neutral-100-light);
+	--text-button-neutral: var(--clr-neutral-700-light);
+	--shadow-button-neutral: var(--clr-neutral-600-light);
+	--bg-button-primary: var(--clr-primary-400-light);
+	--bg-button-primary-hover: var(--clr-primary-300-light);
+	--text-button-primary: var(--clr-neutral-100-light);
+	--shadow-button-primary: var(--clr-primary-500-light);
+	--bg-button-accent: var(--clr-accent-400-light);
+	--bg-button-accent-hover: var(--clr-accent-300-light);
+	--text-button-accent: var(--clr-neutral-100-light);
+	--shadow-button-accent: var(--clr-accent-500-light);
+}
+
+@mixin theme-fancy {
+	--bg-body: var(--clr-primary-800-fancy);
+	--body-copy: var(--clr-secondary-400-fancy);
+	--bg-theme-switcher: var(--clr-primary-700-fancy);
+	--dot-theme-switcher: var(--clr-accent-500-fancy);
+	--dot-theme-switcher-hover: var(--clr-accent-300-fancy);
+	--bg-calculator-screen: var(--clr-primary-700-fancy);
+	--bg-calculator-keypad: var(--clr-primary-700-fancy);
+	--bg-button-neutral: var(--clr-primary-600-fancy);
+	--bg-button-neutral-hover: var(--clr-primary-300-fancy);
+	--text-button-neutral: var(--clr-secondary-400-fancy);
+	--shadow-button-neutral: var(--clr-primary-400-fancy);
+	--bg-button-primary: var(--clr-primary-500-fancy);
+	--bg-button-primary-hover: var(--clr-primary-200-fancy);
+	--text-button-primary: var(--clr-neutral-100-fancy);
+	--shadow-button-primary: var(--clr-primary-100-fancy);
+	--bg-button-accent: var(--clr-accent-500-fancy);
+	--bg-button-accent-hover: var(--clr-accent-300-fancy);
+	--text-button-accent: var(--clr-neutral-100-fancy);
+	--shadow-button-accent: var(--clr-accent-400-fancy);
+}
