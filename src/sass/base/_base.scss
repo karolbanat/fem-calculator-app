@@ -1,6 +1,11 @@
 @use '../abstracts/mixins' as mxn;
 
 body {
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	gap: 3.2rem;
+	padding-block: 3rem;
 	font-family: var(--ff-primary);
 	font-weight: var(--fw-700);
 	color: var(--body-copy);
