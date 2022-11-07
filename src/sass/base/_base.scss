@@ -3,9 +3,10 @@
 body {
 	display: flex;
 	flex-direction: column;
-	justify-items: center;
+	justify-content: center;
 	gap: 3.2rem;
 	padding-block: 3rem;
+	min-height: 100vh;
 	font-family: var(--ff-primary);
 	font-weight: var(--fw-700);
 	color: var(--body-copy);

@@ -23,19 +23,22 @@
       <div class="flex-between-centered">
         <h1 class="logo">calc</h1>
         <form class="theme-switcher">
-          <fieldset class="flex-centered">
-            <legend class="theme-switcher__label">Theme</legend>
+          <fieldset class="theme-switcher__fieldset">
+            <legend class="theme-switcher__legend">Theme</legend>
             <div class="theme-switcher__input-container">
-              <input type="radio" name="theme" value="dark" id="theme-dark" class="theme-switcher__radio-btn">
-              <label for="theme-dark" class="visually-hidden">1 (dark theme)</label>
+              <input type="radio" name="theme" value="dark" id="theme-dark" class="theme-switcher__radio-btn" checked>
+              <label for="theme-dark" class="theme-switcher__radio-label">1 <span class="visually-hidden">(dark
+                  theme)</span></label>
             </div>
             <div class="theme-switcher__input-container">
               <input type="radio" name="theme" value="light" id="theme-light" class="theme-switcher__radio-btn">
-              <label for="theme-light" class="visually-hidden">2 (light theme)</label>
+              <label for="theme-light" class="theme-switcher__radio-label">2 <span class="visually-hidden">(light
+                  theme)</span></label>
             </div>
             <div class="theme-switcher__input-container">
               <input type="radio" name="theme" value="fancy" id="theme-fancy" class="theme-switcher__radio-btn">
-              <label for="theme-fancy" class="visually-hidden">3 (fancy theme)</label>
+              <label for="theme-fancy" class="theme-switcher__radio-label">3 <span class="visually-hidden">(fancy
+                  theme)</span></label>
             </div>
           </fieldset>
         </form>

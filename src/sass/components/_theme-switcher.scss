@@ -1,0 +1,58 @@
+@use '../abstracts/mixins' as mxn;
+
+.theme-switcher {
+	padding: 0.5rem;
+	font-size: var(--fz-200);
+	line-height: 1;
+	background-color: var(--bg-theme-switcher);
+	border-radius: var(--borr-900);
+
+	&__fieldset {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.6rem;
+		border: none;
+	}
+
+	&__input-container {
+		position: relative;
+		display: grid;
+		height: auto;
+	}
+
+	&__legend {
+		position: absolute;
+		left: -2.6rem;
+		top: 50%;
+		translate: -100% -50%;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	&__radio-label {
+		position: absolute;
+		top: -1rem;
+		left: 50%;
+		translate: -50% -100%;
+	}
+
+	&__radio-btn {
+		appearance: none;
+		width: 1.6rem;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: background-color 0.4s ease;
+
+		&:checked {
+			background-color: var(--dot-theme-switcher);
+		}
+
+		&:hover,
+		&:focus {
+			background-color: var(--dot-theme-switcher-hover);
+		}
+	}
+}
