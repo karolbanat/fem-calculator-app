@@ -18,6 +18,56 @@
 </head>
 
 <body>
+  <header>
+    <div class="container">
+      <div class="flex-between-centered">
+        <h1 class="logo">calc</h1>
+        <form class="theme-switcher">
+          <fieldset class="flex-centered">
+            <legend class="theme-switcher__label">Theme</legend>
+            <input type="radio" name="theme" value="dark" id="theme-dark" class="theme-switcher__radio-btn">
+            <label for="theme-dark" class="visually-hidden">1 (dark theme)</label>
+            <input type="radio" name="theme" value="light" id="theme-light" class="theme-switcher__radio-btn">
+            <label for="theme-light" class="visually-hidden">2 (light theme)</label>
+            <input type="radio" name="theme" value="fancy" id="theme-fancy" class="theme-switcher__radio-btn">
+            <label for="theme-fancy" class="visually-hidden">3 (fancy theme)</label>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section aria-label="Calculator app">
+      <div class="container">
+        <div class="calculator">
+          <div class="calculator__screen">
+            <p class="calculator__output">399,981</p>
+          </div>
+          <div role="group" class="calculator__keypad">
+            <button class="calculator__button calculator__button--neutral" data-value="7">7</button>
+            <button class="calculator__button calculator__button--neutral" data-value="8">8</button>
+            <button class="calculator__button calculator__button--neutral" data-value="9">9</button>
+            <button class="calculator__button calculator__button--primary" data-operation="delete">del</button>
+            <button class="calculator__button calculator__button--neutral" data-value="4">4</button>
+            <button class="calculator__button calculator__button--neutral" data-value="5">5</button>
+            <button class="calculator__button calculator__button--neutral" data-value="6">6</button>
+            <button class="calculator__button calculator__button--neutral" data-operation="+">+</button>
+            <button class="calculator__button calculator__button--neutral" data-value="1">1</button>
+            <button class="calculator__button calculator__button--neutral" data-value="2">2</button>
+            <button class="calculator__button calculator__button--neutral" data-value="3">3</button>
+            <button class="calculator__button calculator__button--neutral" data-operation="-">-</button>
+            <button class="calculator__button calculator__button--neutral" data-value=".">.</button>
+            <button class="calculator__button calculator__button--neutral" data-value="0">0</button>
+            <button class="calculator__button calculator__button--neutral" data-operation="/">/</button>
+            <button class="calculator__button calculator__button--neutral" data-operation="*">x</button>
+            <button class="calculator__button calculator__button--primary" data-operation="reset">reset</button>
+            <button class="calculator__button calculator__button--accent" data-operation="=">=</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
 </body>
 
