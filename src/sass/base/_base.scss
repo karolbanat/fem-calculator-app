@@ -4,7 +4,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: 3.2rem;
+	gap: var(--spacer-rem-500);
 	padding-block: 3rem;
 	min-height: 100vh;
 	font-family: var(--ff-primary);

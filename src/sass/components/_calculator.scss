@@ -1,0 +1,86 @@
+@use '../abstracts/mixins' as mxn;
+
+.calculator {
+	display: grid;
+	gap: var(--spacer-rem-300);
+
+	&__screen {
+		/* sizing */
+		padding-inline: var(--spacer-rem-400);
+		padding-block-start: var(--spacer-em-300);
+		padding-block-end: var(--spacer-em-200);
+		/* typography */
+		font-size: var(--fz-700);
+		text-align: end;
+		letter-spacing: -0.01675em;
+		line-height: 1;
+		/* appearance */
+		background-color: var(--bg-calculator-screen);
+		border-radius: var(--borr-300);
+	}
+
+	&__keypad {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: var(--spacer-rem-200);
+		padding: var(--spacer-rem-400);
+		background-color: var(--bg-calculator-keypad);
+		border-radius: var(--borr-300);
+
+		& [data-span='2'] {
+			grid-column: span 2;
+		}
+	}
+
+	&__button {
+		display: inline-grid;
+		place-items: center;
+		/* sizing */
+		padding-block: 1.2rem;
+		padding-inline: 1rem;
+		min-height: 6.4rem;
+		/* typography */
+		font-size: var(--fz-600);
+		line-height: 1;
+		letter-spacing: -0.5px;
+		color: var(--text-keypad-button);
+		/* appearance */
+		background-color: var(--bg-keypad-button);
+		border: none;
+		border-radius: var(--borr-200);
+		box-shadow: inset 0 var(--shadow-y-offset, -4px) 0 var(--shadow-keypad-button);
+		/* other */
+		cursor: pointer;
+		transition: background-color 0.4s ease, box-shadow 0.2s ease;
+
+		&:hover,
+		&:focus {
+			--bg-keypad-button: var(--bg-keypad-button-hover);
+			--shadow-y-offset: -2px;
+		}
+
+		&--neutral {
+			--text-keypad-button: var(--text-button-neutral);
+			--bg-keypad-button: var(--bg-button-neutral);
+			--bg-keypad-button-hover: var(--bg-button-neutral-hover);
+			--shadow-keypad-button: var(--shadow-button-neutral);
+		}
+
+		&--primary {
+			--text-keypad-button: var(--text-button-primary);
+			--bg-keypad-button: var(--bg-button-primary);
+			--bg-keypad-button-hover: var(--bg-button-primary-hover);
+			--shadow-keypad-button: var(--shadow-button-primary);
+			font-size: var(--fz-400);
+			text-transform: uppercase;
+		}
+
+		&--accent {
+			--text-keypad-button: var(--text-button-accent);
+			--bg-keypad-button: var(--bg-button-accent);
+			--bg-keypad-button-hover: var(--bg-button-accent-hover);
+			--shadow-keypad-button: var(--shadow-button-accent);
+			font-size: var(--fz-400);
+		}
+	}
+}

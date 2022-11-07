@@ -51,7 +51,7 @@
       <div class="container">
         <div class="calculator">
           <div class="calculator__screen">
-            <p class="calculator__output">399,981</p>
+            <p id="calculator-output">399,981</p>
           </div>
           <div role="group" class="calculator__keypad">
             <button class="calculator__button calculator__button--neutral" data-value="7">7</button>
@@ -70,8 +70,9 @@
             <button class="calculator__button calculator__button--neutral" data-value="0">0</button>
             <button class="calculator__button calculator__button--neutral" data-operation="/">/</button>
             <button class="calculator__button calculator__button--neutral" data-operation="*">x</button>
-            <button class="calculator__button calculator__button--primary" data-operation="reset">reset</button>
-            <button class="calculator__button calculator__button--accent" data-operation="=">=</button>
+            <button class="calculator__button calculator__button--primary" data-operation="reset"
+                    data-span="2">reset</button>
+            <button class="calculator__button calculator__button--accent" data-operation="=" data-span="2">=</button>
           </div>
         </div>
       </div>
