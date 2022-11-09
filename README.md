@@ -4,8 +4,8 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 
 ### Links
 
-- Solution URL: [Frontend Mentor Solution Page](https://your-solution-url.com)
-- Live Site URL: [GitHub Pages Site](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor Solution Page](https://www.frontendmentor.io/solutions/calculator-app-0Va3JeLkz_)
+- Live Site URL: [GitHub Pages Site](https://karolbanat.github.io/fem-calculator-app/)
 
 ## Author
 
