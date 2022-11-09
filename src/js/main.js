@@ -40,29 +40,38 @@ themeSwitcherButtons.forEach(btn => btn.addEventListener('change', e => changeTh
 /* calculator handling */
 class Calculator {
 	result = 0.0;
-	operation = undefined;
+	operation = '='; // '=' treated as default operation
 	buffer = '0';
 
-	invokeOperation(nextOperation = undefined) {
+	invokeOperation(nextOperation = '=') {
 		switch (this.operation) {
 			case '+':
 				this.result = this.result + parseFloat(this.buffer);
+				this.clearBuffer();
 				break;
 			case '-':
 				this.result = this.result - parseFloat(this.buffer);
+				this.clearBuffer();
 				break;
 			case '/':
 				this.result = this.result / parseFloat(this.buffer);
+				this.clearBuffer();
 				break;
 			case '*':
 				this.result = this.result * parseFloat(this.buffer);
+				this.clearBuffer();
 				break;
-			default:
-				this.result = parseFloat(this.buffer);
+			case '=':
+				/* after pressing '=' operation if there is no result
+          or there is result and non empty buffer (meaning buffer needs to replace result),
+          move buffer to result and clear buffer */
+				if (this.result === 0 || (this.result !== 0 && this.buffer !== '0')) {
+					this.result = parseFloat(this.buffer);
+					this.clearBuffer();
+				}
 		}
 
 		this.setOperation(nextOperation);
-		this.buffer = '0';
 	}
 
 	setOperation(operation) {
@@ -70,9 +79,17 @@ class Calculator {
 	}
 
 	reset() {
-		this.buffer = '0';
+		this.clearBuffer();
 		this.result = 0.0;
-		this.operation = undefined;
+		this.operation = '=';
+	}
+
+	clearBuffer() {
+		this.buffer = '0';
+	}
+
+	hasEmptyBuffer() {
+		return this.buffer === '0';
 	}
 
 	increaseValue(value) {
@@ -115,8 +132,15 @@ const handleOperationKey = e => {
 			calc.reset();
 			displayOutput(calc.buffer);
 			break;
-		case '+':
 		case '-':
+			/* if no value provided, then add '-' sign at the front (treating it as value),
+        else treat it as subtracting operation */
+			if (calc.hasEmptyBuffer()) calc.increaseValue('-');
+			else calc.invokeOperation(operation);
+
+			displayOutput(calc.buffer);
+			break;
+		case '+':
 		case '/':
 		case '*':
 			calc.invokeOperation(operation);
@@ -128,9 +152,8 @@ const handleOperationKey = e => {
 			break;
 	}
 };
-const displayOutput = (value = '0') => {
-	calculatorOutput.innerText = value;
-};
+
+const displayOutput = (value = '0') => (calculatorOutput.innerText = value);
 
 valueKeys.forEach(key =>
 	key.addEventListener('click', e => {
