@@ -93,6 +93,7 @@ class Calculator {
 	}
 
 	increaseValue(value) {
+		/* don't add '.' if it is present */
 		if (value === '.' && this.buffer.includes('.')) return;
 
 		this.buffer += value;
@@ -103,8 +104,9 @@ class Calculator {
 		this.buffer = this.buffer.slice(0, -1) || '0';
 	}
 
+	/* formatting */
 	formattedResult() {
-		return this.result.toLocaleString('en-US');
+		return this.result.toString().replace(/[^\.]+/, match => parseInt(match).toLocaleString('en-US'));
 	}
 
 	formattedBuffer() {
