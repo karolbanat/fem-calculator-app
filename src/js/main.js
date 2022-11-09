@@ -103,6 +103,15 @@ class Calculator {
 		this.buffer = this.buffer.slice(0, -1) || '0';
 	}
 
+	formattedResult() {
+		return this.result.toLocaleString('en-US');
+	}
+
+	formattedBuffer() {
+		/* searches for numbers before '.' and formats it */
+		return this.buffer.replace(/[^\.]+/, match => parseInt(match).toLocaleString('en-US'));
+	}
+
 	transformLead() {
 		this.trimLeadingZeros();
 		this.convertLeadingDot();
@@ -126,11 +135,11 @@ const handleOperationKey = e => {
 	switch (operation) {
 		case 'delete':
 			calc.decreaseValue();
-			displayOutput(calc.buffer);
+			displayOutput(calc.formattedBuffer());
 			break;
 		case 'reset':
 			calc.reset();
-			displayOutput(calc.buffer);
+			displayOutput(calc.formattedBuffer());
 			break;
 		case '-':
 			/* if no value provided, then add '-' sign at the front (treating it as value),
@@ -138,17 +147,17 @@ const handleOperationKey = e => {
 			if (calc.hasEmptyBuffer()) calc.increaseValue('-');
 			else calc.invokeOperation(operation);
 
-			displayOutput(calc.buffer);
+			displayOutput(calc.formattedBuffer());
 			break;
 		case '+':
 		case '/':
 		case '*':
 			calc.invokeOperation(operation);
-			displayOutput(calc.buffer);
+			displayOutput(calc.formattedBuffer());
 			break;
 		case '=':
 			calc.invokeOperation();
-			displayOutput(calc.result);
+			displayOutput(calc.formattedResult());
 			break;
 	}
 };
@@ -158,7 +167,7 @@ const displayOutput = (value = '0') => (calculatorOutput.innerText = value);
 valueKeys.forEach(key =>
 	key.addEventListener('click', e => {
 		calc.increaseValue(e.target.dataset.value);
-		displayOutput(calc.buffer);
+		displayOutput(calc.formattedBuffer());
 	})
 );
 
